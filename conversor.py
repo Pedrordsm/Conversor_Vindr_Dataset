@@ -229,7 +229,7 @@ if __name__ == "__main__":
         image_labels_train="physionet.org/files/vindr-cxr/1.0.0/annotations/image_labels_train.csv",
         image_labels_test="physionet.org/files/vindr-cxr/1.0.0/annotations/image_labels_test.csv",
         dicom_train_path="physionet.org/files/vindr-cxr/1.0.0/train",
-        dicom_test_path="home/pedro/Área de trabalho/train_vindr/physionet.org/files/vindr-cxr/1.0.0/test",
+        dicom_test_path="physionet.org/files/vindr-cxr/1.0.0/test",
         output_dir="vindr_yolo_dataset"
     )
     
