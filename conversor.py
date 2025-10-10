@@ -27,7 +27,7 @@ class DICOMToYOLO:
         
         for folder in folders:
             os.makedirs(os.path.join(self.output_dir, folder), exist_ok=True)
-        print("pastas criadas")
+        print("Pastas criadas!")
     
     def load_csvs(self):
 
@@ -220,7 +220,7 @@ names: {classes}
         # Criar arquivo de configuração
         self.create_data_yaml()
         
-        print("converteu!")
+        print("Imagens convertidas!")
 
 if __name__ == "__main__":
     path = input("Digite o caminho do diretório onde está o arquivo Physionet: ")
