@@ -54,18 +54,22 @@ class DICOMToYOLO:
         try:
             ds = pydicom.dcmread(dicom_path)
             img = ds.pixel_array
-            
+
+            # Corrigir inversão (Photometric Interpretation)
+            if hasattr(ds, 'PhotometricInterpretation'):
+                if ds.PhotometricInterpretation == "MONOCHROME1":
+                    img = img.max() - img  # inverte contraste
+
             # Ajustar valores se necessário
             if hasattr(ds, 'RescaleSlope') and hasattr(ds, 'RescaleIntercept'):
                 img = img * ds.RescaleSlope + ds.RescaleIntercept
-            
-            # Normalizar para 0-255
+
+            # Normalizar para 0–255
             img = (img - img.min()) / (img.max() - img.min() + 1e-8)
-            img = (img* 255).astype('uint8')
-            
-                
-            return img, img.shape[1], img.shape[0]  # img, width, height
-            
+            img = (img * 255).astype('uint8')
+
+            return img, img.shape[1], img.shape[0]
+
         except Exception as e:
             print(f"erro ao converter {dicom_path}: {e}")
             return None, 0, 0
@@ -193,7 +197,7 @@ names: {classes}
         print(f"split realizado: {len(images)-n_val} treino, {n_val} validação")
     
     def run(self):
-        print("iniciando conversão DICOM para YOLO")
+        print("Iniciando conversão DICOM para YOLO")
         
         # Carregar CSVs
         ann_train, ann_test, img_train, img_test = self.load_csvs()
