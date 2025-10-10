@@ -227,12 +227,12 @@ if __name__ == "__main__":
     path = path if path.endswith('/') else path + '/'
     out = input("Digite o nome do diretório de saída (será criado se não existir): ")
     converter = DICOMToYOLO(
-        annotations_train="physionet.org/files/vindr-cxr/1.0.0/annotations/annotations_train.csv",
-        annotations_test="physionet.org/files/vindr-cxr/1.0.0/annotations/annotations_test.csv",
-        image_labels_train="physionet.org/files/vindr-cxr/1.0.0/annotations/image_labels_train.csv",
-        image_labels_test="physionet.org/files/vindr-cxr/1.0.0/annotations/image_labels_test.csv",
-        dicom_train_path="physionet.org/files/vindr-cxr/1.0.0/train",
-        dicom_test_path="home/pedro/Área de trabalho/train_vindr/physionet.org/files/vindr-cxr/1.0.0/test",
-        output_dir="vindr_yolo_dataset"
+        annotations_train= path + "/physionet.org/files/vindr-cxr/1.0.0/annotations/annotations_train.csv",
+        annotations_test= path + "/physionet.org/files/vindr-cxr/1.0.0/annotations/annotations_test.csv",
+        image_labels_train= path +"/physionet.org/files/vindr-cxr/1.0.0/annotations/image_labels_train.csv",
+        image_labels_test= path +"/physionet.org/files/vindr-cxr/1.0.0/annotations/image_labels_test.csv",
+        dicom_train_path= path +"/physionet.org/files/vindr-cxr/1.0.0/train",
+        dicom_test_path= path + "/physionet.org/files/vindr-cxr/1.0.0/test",
+        output_dir= out
     )
     converter.run()
