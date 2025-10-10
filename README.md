@@ -60,7 +60,7 @@ python converter.py
 Ao executar o programa, o usuário deverá passar os caminhos de entrada e o nome da pasta de saída via terminal: 
 
 ```
-Digite o caminho do diretório onde está o arquivo Physionet: exemplocaminho/physionet.org
+Digite o caminho do diretório onde está o arquivo Physionet: (pasta onde o arquivo do physionet.org está)
 
 Digite o nome do diretório de saída (será criado se não existir): exemplosaida
 ```
