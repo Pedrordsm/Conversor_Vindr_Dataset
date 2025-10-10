@@ -1,4 +1,3 @@
-# Conversor do dataset Vindr-CXR
 # Conversor do Dataset Vindr-CXR para YOLOvX
 
 Este repositório converte imagens **DICOM** para o formato **PNG** e organiza o dataset em 3 subpastas (**`train`**, **`val`**, **`test`**) prontas para o treinamento de modelos **YOLO** (You Only Look Once).
